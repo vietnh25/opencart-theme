@@ -10,7 +10,7 @@ class ControllerExtensionModuleSohtmlcontent extends Controller {
 			// caching
 			$use_cache = (int)$setting['use_cache'];
 			$cache_time = (int)$setting['cache_time'];
-			$folder_cache = DIR_CACHE.'so/HtmlContent/';
+			$folder_cache = DIR_CACHE.'so_HtmlContent/';
 			if(!file_exists($folder_cache))
 				mkdir ($folder_cache, 0777, true);
 			if (!class_exists('Cache_Lite'))

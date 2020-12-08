@@ -279,7 +279,7 @@ class ControllerExtensionModuleSocategoryslider extends Controller {
 		// caching
 		$use_cache = (int)$setting['use_cache'];
 		$cache_time = (int)$setting['cache_time'];
-		$folder_cache = DIR_CACHE.'so/CategorySlider/';
+		$folder_cache = DIR_CACHE.'so_CategorySlider/';
 		if(!file_exists($folder_cache))
 			mkdir ($folder_cache, 0777, true);
 		if (!class_exists('Cache_Lite'))
