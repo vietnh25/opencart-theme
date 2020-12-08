@@ -19,7 +19,7 @@
         {% for item in list %}        
             <div class="item">
                 <a href="{{ item.url}}" title="{{ item.title}}" target="{{ item_link_target}}">
-                    <img class="lazyload"   data-sizes="auto" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="{{ item.thumb}}"  alt="{{ item.title}}" />
+                    <img src="{{ item.thumb}}"  alt="{{ item.title}}" />
                 </a>
                 <div class="sohomeslider-description">
                     <h2>{{ item.caption}}</h2>
