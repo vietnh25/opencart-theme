@@ -1,0 +1,33 @@
+{% if delivery_method_status == 1 %}
+<div class="checkout-content checkout-shipping-methods">
+    {% if error_warning %}
+        <div class="alert alert-warning"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+    {% endif %}
+    {% if shipping_methods %}
+        <h2 class="secondary-title"><i class="fa fa-location-arrow"></i>{{ text_title_shipping_method }}</h2>
+        <div class="box-inner">
+            {% for shipping_method in shipping_methods %}
+                <p><strong>{{ shipping_method.title }}</strong></p>
+                {% if not shipping_method.error %}
+                    {% for key, quote in shipping_method.quote %}
+                        <div class="radio {{ key }} {{ default_shipping }} {{ quote.code }} {{ code }}">
+                            <label>
+                                {% if quote.code == code %}
+                                    <input type="radio" name="shipping_method" value="{{ quote.code }}" checked="checked"/>
+                                {% elseif default_shipping == key %}
+                                    <input type="radio" name="shipping_method" value="{{ quote.code }}" checked="checked"/>
+                                {% else %}
+                                    <input type="radio" name="shipping_method" value="{{ quote.code }}"/>
+                                {% endif %}
+                                {{ quote.title }} - {{ quote.text }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="alert alert-danger">{{ shipping_method.error }}</div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endif %}

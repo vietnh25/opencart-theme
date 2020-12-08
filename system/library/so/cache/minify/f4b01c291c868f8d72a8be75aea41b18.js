@@ -1,0 +1,2 @@
+
+$(document).ready(function(){$(".button-toggle").click(function(){if($(this).children('.showmore').hasClass('active'))$(this).children().removeClass('active');else $(this).children().addClass('active');if($(this).prev().hasClass('showdown'))$(this).prev().removeClass('showdown').addClass('showup');else $(this).prev().removeClass('showup').addClass('showdown');});});

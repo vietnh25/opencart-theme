@@ -1,0 +1,2 @@
+
+$(function($){"use strict";var $window=$('#wrapper .content'),$document=$('#content'),$header=$("header"),headerStaticHeight=$header.outerHeight();$window.scroll(function(event){var scrTop=$(this).scrollTop();if(scrTop>=headerStaticHeight){$header.addClass('topnav-menu');}else if(scrTop<headerStaticHeight){$header.stop().removeClass("topnav-menu");}});});
